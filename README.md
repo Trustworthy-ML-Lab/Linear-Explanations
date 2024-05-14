@@ -9,13 +9,13 @@ We propose that neurons are best understood as linear combinations of interpreta
 ### Simulation results (correlation scoring)
 
 
-| Target model              | Network Dissection | MILAN  | CLIP-Dissect | LE (Label) | LE (SigLIP) |
+| Target model              | Network <br> Dissection | MILAN  | CLIP-Dissect | LE (Label) | LE (SigLIP) |
 |---------------------------|------------------------|--------|--------------|------------|-------------|
-| ResNet-50 <br>(ImageNet)  | 0.1242                 | 0.0920 | 0.1871       | 0.2924     | **0.3772**  |
-| ResNet-18 <br>(Places365) | 0.2038                 | 0.1557 | 0.2208       | 0.3388     | **0.4372**  |
-| VGG-16 <br>(CIFAR-100)    | -                      | -      | 0.2298       | 0.4330     | **0.4970**  |
-| ViT-B/16 <br>(ImageNet)   | -                      | -      | 0.1722       | 0.3243     | **0.3489**  |
-| ViT-L/32 <br>(ImageNet)   | -                      | -      | 0.0549       | 0.1879     | **0.2182**  |
+| ResNet-50 (ImageNet)  | 0.1242                 | 0.0920 | 0.1871       | 0.2924     | **0.3772**  |
+| ResNet-18 (Places365) | 0.2038                 | 0.1557 | 0.2208       | 0.3388     | **0.4372**  |
+| VGG-16 (CIFAR-100)    | -                      | -      | 0.2298       | 0.4330     | **0.4970**  |
+| ViT-B/16 (ImageNet)   | -                      | -      | 0.1722       | 0.3243     | **0.3489**  |
+| ViT-L/32 (ImageNet)   | -                      | -      | 0.0549       | 0.1879     | **0.2182**  |
 
 Average correlation scores for different explanation methods in seconds to last layer of the different models.
 
@@ -24,8 +24,6 @@ Average correlation scores for different explanation methods in seconds to last 
 ![Qualitative](data/images/nice_example_1_edited.png)
 
 ### Cite this work
-
-## Cite this work
 T. Oikarinen and T.W. Weng, Linear Explanations for Individual Neurons, ICML 2024.
 
 ```
