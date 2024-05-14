@@ -1,19 +1,38 @@
 # Linear Explanations for Individual Neurons
-This is the official repository for our paper "Linear Explanations for Individual Neurons". Full paper and code will be released soon.
+This is the official repository for our paper ICML 2024 *Linear Explanations for Individual Neurons*. [Arxiv link](https://arxiv.org/abs/2405.06855) Full code will be released soon.
+
+We propose that neurons are best understood as linear combinations of interpretable concepts, and propose an efficient way to generate such explanations: Linear Explanations (LE). In addition we introduce the *simulation* evaluation for vision models.
 
 ### Method Overview
-![Overview](data/images/overview_fig_v4.png)
-
-### Abstract
-
-In recent years many methods have been developed to understand the internal workings of neural networks, often by describing the function of individual neurons in the model. However, these methods typically only focus on explaining the very highest activations of a neuron. In this paper we show this is not sufficient, and that the highest activation range is only responsible for a very small percentage of the neuron's causal effect. In addition, inputs causing lower activations are often very different and can't be reliable predicted by only looking at high activations. We propose that neurons should instead be understood as a linear combination of concepts, and develop an efficient method for producing these linear explanations. In addition, we show how to automatically evaluate description quality using simulation, i.e. predicting neuron activations on unseen inputs in vision setting.
-
-### Example results
-
-![Area Chart](data/images/area_chart.png)
-
-![Qualitative](data/images/nice_example_1.png)
+![Overview](data/images/overview_fig_v7.png)
 
 ### Simulation results (correlation scoring)
 
-![Correlation score](data/images/correlation_score.png)
+
+| Target model              | Network Dissection | MILAN  | CLIP-Dissect | LE (Label) | LE (SigLIP) |
+|---------------------------|------------------------|--------|--------------|------------|-------------|
+| ResNet-50 <br>(ImageNet)  | 0.1242                 | 0.0920 | 0.1871       | 0.2924     | **0.3772**  |
+| ResNet-18 <br>(Places365) | 0.2038                 | 0.1557 | 0.2208       | 0.3388     | **0.4372**  |
+| VGG-16 <br>(CIFAR-100)    | -                      | -      | 0.2298       | 0.4330     | **0.4970**  |
+| ViT-B/16 <br>(ImageNet)   | -                      | -      | 0.1722       | 0.3243     | **0.3489**  |
+| ViT-L/32 <br>(ImageNet)   | -                      | -      | 0.0549       | 0.1879     | **0.2182**  |
+
+Average correlation scores for different explanation methods in seconds to last layer of the different models.
+
+### Example results
+
+![Qualitative](data/images/nice_example_1_edited.png)
+
+### Cite this work
+
+## Cite this work
+T. Oikarinen and T.W. Weng, Linear Explanations for Individual Neurons, ICML 2024.
+
+```
+@inproceedings{oikarinen2024linear,
+  title={Linear Explanations for Individual Neurons},
+  author={Oikarinen, Tuomas and Weng, Tsui-Wei},
+  booktitle={International Conference on Machine Learning},
+  year={2024}
+}
+```
