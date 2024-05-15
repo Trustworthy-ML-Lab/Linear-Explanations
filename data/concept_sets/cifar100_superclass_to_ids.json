@@ -1,0 +1,140 @@
+{
+    "aquatic mammals": [
+        4,
+        30,
+        55,
+        72,
+        95
+    ],
+    "fish": [
+        1,
+        32,
+        67,
+        73,
+        91
+    ],
+    "flowers": [
+        54,
+        62,
+        70,
+        82,
+        92
+    ],
+    "food containers": [
+        9,
+        10,
+        16,
+        28,
+        61
+    ],
+    "fruit and vegetables": [
+        0,
+        51,
+        53,
+        57,
+        83
+    ],
+    "household electrical devices": [
+        22,
+        39,
+        40,
+        86,
+        87
+    ],
+    "household furniture": [
+        5,
+        20,
+        25,
+        84,
+        94
+    ],
+    "insects": [
+        6,
+        7,
+        14,
+        18,
+        24
+    ],
+    "large carnivores": [
+        3,
+        42,
+        43,
+        88,
+        97
+    ],
+    "large man-made outdoor things": [
+        12,
+        17,
+        37,
+        68,
+        76
+    ],
+    "large natural outdoor scenes": [
+        23,
+        33,
+        49,
+        60,
+        71
+    ],
+    "large omnivores and herbivores": [
+        15,
+        19,
+        21,
+        31,
+        38
+    ],
+    "medium-sized mammals": [
+        34,
+        63,
+        64,
+        66,
+        75
+    ],
+    "non-insect invertebrates": [
+        26,
+        45,
+        77,
+        79,
+        99
+    ],
+    "people": [
+        2,
+        11,
+        35,
+        46,
+        98
+    ],
+    "reptiles": [
+        27,
+        29,
+        44,
+        78,
+        93
+    ],
+    "small mammals": [
+        36,
+        50,
+        65,
+        74,
+        80
+    ],
+    "trees": [
+        47,
+        52,
+        56,
+        59,
+        96
+    ],
+    "vehicles": [
+        8,
+        13,
+        48,
+        58,
+        90,
+        41,
+        69,
+        81,
+        85,
+        89
+    ]
+}

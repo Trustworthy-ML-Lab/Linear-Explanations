@@ -1,0 +1,67 @@
+Commands used for reproducing our MAIN results:
+
+Explain neurons(Table 2), LE(Label):
+
+python explain_neurons.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg 
+python explain_neurons.py --target_name resnet18_places365 --target_layer layer4 --pool_mode avg --dataset_name places365_val
+python explain_neurons.py --target_name vgg16_bn_cifar100 --target_layer classifier[4] --dataset_name cifar100_val
+python explain_neurons.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_11.mlp[1] --pool_mode first
+python explain_neurons.py --target_name vit_l_32_imagenet --target_layer encoder.layers.encoder_layer_23.mlp[1] --pool_mode first
+
+To get LE(SigLIP) results instead, add the argument `--mode siglip`
+
+
+Simulation - Correlation Scoring(Table 2):
+
+python simulate_correlation.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg 
+python simulate_correlation.py --target_name resnet18_places365 --target_layer layer4 --pool_mode avg --dataset_name places365_val
+python simulate_correlation.py --target_name vgg16_bn_cifar100 --target_layer classifier[4] --dataset_name cifar100_val
+python simulate_correlation.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_11.mlp[1] --pool_mode first
+python simulate_correlation.py --target_name vit_l_32_imagenet --target_layer encoder.layers.encoder_layer_23.mlp[1] --pool_mode first
+
+By default evaluates LE(Label). To evaluate other methods, use the
+ --explanation method [le_siglip/net_dissect/milan/clip_dissect] flag
+To simulate a new explanation file (instead of ones provided by us), use the --explanation_path flag (instead of --explanation_method).
+You can also run many simulation scores in 1 by running run_correlations.ipynb
+
+Simulation - Ablation Scoring(Table 3):
+python simulate_ablation.py
+(by default uses optim method, to use norm method described in Appendix B.5, add --mode norm)
+
+By default evaluates LE(Label). To evaluate other methods, use the
+ --explanation method [le_siglip/net_dissect/milan/clip_dissect] flag
+
+
+Reproducing other results:
+Section 2 results can be reproduced by running activation_importance.ipynb
+Area chart (Figure 3) - Run area_chart.ipynb
+Highly activating image visualization e.g. Figure 4 - Run visualize_neuron.ipynb
+Plot correlation vs ablation score (Figure 5) - secondary/correlation_vs_ablation_score.ipynb
+
+Appendix B.1: Different simulator model: 
+python simulate_correlation.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg --clip_name ViT-L-14-336
+
+Appendix B.2: Different concept set: 
+python explain_neurons.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg --mode siglip --concept_set data/concept_sets/20k.txt
+python explain_neurons.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg --mode siglip --concept_set data/concept_sets/imagenet_labels_clean.txt
+
+Appendix B.3: Different explainer_model:
+python explain_neurons.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg --mode siglip --clip_name ViT-L-14-336
+
+Appendix B.4: No Greedy search:
+python explain_neurons_no_gs.py --target_name resnet50_imagenet --target_layer layer4 --pool_mode avg
+
+Additional ResNet layers(Table 10/11):
+simply edit --target_layer flag above to match the layer you are interested in
+
+Additional VGG16 layers(Table 12):
+python explain_neurons.py --target_name vgg16_bn_cifar100 --target_layer features[43] --dataset_name cifar100_val
+
+Additional ViT layers(Table 13):
+python simulate_correlation.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_11 --pool_mode first
+python simulate_correlation.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_11.mlp[1] --pool_mode first
+python simulate_correlation.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_10 --pool_mode avg
+python simulate_correlation.py --target_name vit_b_16_imagenet --target_layer encoder.layers.encoder_layer_10.mlp[1] --pool_mode avg
+
+Appendix C.2: Dead neurons in ViT
+secondary/dead_neuron_analysis.ipynb

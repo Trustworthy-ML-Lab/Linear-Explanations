@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+__pycache__/
+saved_activations/
+data/resnet18_places365.pth.tar
+old

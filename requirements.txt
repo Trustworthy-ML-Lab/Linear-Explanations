@@ -1,0 +1,11 @@
+torch
+torchvision >= 0.13
+jupyter >= 1.0
+notebook >= 7.0
+pandas >= 2.0
+open_clip_torch >= 2.23
+transformers >= 4.37
+tqdm
+gdown
+matplotlib
+nltk
