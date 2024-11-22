@@ -57,6 +57,7 @@ Average correlation scores for different explanation methods in seconds to last 
 ## Sources
 
 GLM-Saga: https://github.com/MadryLab/glm_saga
+- Note we modify the original implementation on [line 116 and 119](https://github.com/Trustworthy-ML-Lab/Linear-Explanations/blob/main/glm_saga/elasticnet.py#L116), [line 151](https://github.com/Trustworthy-ML-Lab/Linear-Explanations/blob/main/glm_saga/elasticnet.py#L151) and [line 330 and 333](https://github.com/Trustworthy-ML-Lab/Linear-Explanations/blob/main/glm_saga/elasticnet.py#L330) to get the same results regardless of how many neurons we explain at once.
 
 RN18(Places365) model: https://github.com/CSAILVision/NetDissect-Lite
 
